@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MetroFramework.Forms;
+using System.Data.SqlClient;
+using DevComponents.DotNetBar.Controls;
+
+namespace productionMonitoringSystem06302016
+{
+    public partial class formulaFrm : MetroForm
+    {
+        public formulaFrm()
+        {
+            InitializeComponent();
+        }
+
+        private void formulaFrm_Load(object sender, EventArgs e)
+        {
+            displayFormula();
+        }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void displayFormula() //Display users list....
+        {
+            sqlcon userConnect = new sqlcon();
+            userConnect.dbIn();
+            SqlCommand users = new SqlCommand("[DisplayFG]", sqlcon.calc);
+            SqlDataAdapter calculated = new SqlDataAdapter();
+            calculated.SelectCommand = users;
+            DataTable dataSet = new DataTable();
+            calculated.Fill(dataSet);
+            BindingSource nSource = new BindingSource();
+            nSource.DataSource = dataSet;
+            metroGrid1.DataSource = nSource;
+            calculated.Update(dataSet);
+            userConnect.dbOut();
+        }
+
+        private void metroGrid1_DoubleClick(object sender, EventArgs e)
+        {
+            //slidePanel2.BringToFront();
+            //metroTextBox11.Select();
+            //slidePanel2.AnimationTime = 1000;
+            //slidePanel2.SlideSide = eSlideSide.Left;
+            //slidePanel2.IsOpen = true;
+            //slidePanel1.Enabled = false;
+            //metroGrid1.Enabled = false;
+            //var rowsCount = metroGrid1.SelectedRows.Count;
+            //if (rowsCount == 0 || rowsCount > 1) return;
+            //metroLabel12.Text = metroGrid1.SelectedCells[0].Value.ToString();
+            //searchUser();
+            //this.Opacity = 30;
+            //texiUsers tUsr = new texiUsers();
+            //tUsr.Opacity = 1;
+        }
+        private void AddNewProduct()
+        {
+            sqlcon userConnect = new sqlcon();
+            userConnect.dbIn();
+            SqlCommand material = new SqlCommand("[addNewTexiProduct]", sqlcon.calc);
+            material.CommandType = System.Data.CommandType.StoredProcedure;
+            material.Parameters.AddWithValue("@productName", metroTextBox2.Text);
+            material.Parameters.AddWithValue("@desc", metroTextBox1.Text);
+            material.Parameters.AddWithValue("@price", metroTextBox3.Text);
+            material.Parameters.AddWithValue("@employe", metroLabel4.Text);
+            material.Parameters.AddWithValue("@Bagging", metroTextBox4.Text);
+            material.ExecuteNonQuery();
+            userConnect.dbOut();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (metroTextBox1.Text == "" || metroTextBox2.Text == "" || metroTextBox3.Text == "" || metroTextBox4.Text == "")
+            {
+                DesktopAlert.Show("Please check your inputs");
+            }
+            else
+            {
+                AddNewProduct();
+            }
+
+        }
+        private void productExistCheck() //Check for  user existence....
+        {
+            string pName = "";
+            
+
+            sqlcon userConnect = new sqlcon();
+
+            userConnect.dbIn();
+            SqlCommand cmd = new SqlCommand("[chkFGProductsDup] '" + metroTextBox2.Text + "'", sqlcon.calc);
+            SqlDataReader dr = cmd.ExecuteReader();
+            int user = 0;
+
+            while (dr.Read())
+            {
+                user += 1;
+                pName = dr["productName"].ToString();
+               
+            }
+            userConnect.dbOut();
+            if (pName.ToUpper() == metroTextBox2.Text.ToUpper()  &&
+                metroTextBox2.Text != string.Empty)
+            {
+                metroButton1.Enabled = false;
+                DesktopAlert.Show("Already Exist");
+            }
+            else
+            {
+                metroButton1.Enabled = true;
+            }
+        }
+
+        private void metroTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            productExistCheck();
+        }
+
+        private void metroTextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(metroTextBox3.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void metroTextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            decimal x;
+            if (ch == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            else if (!char.IsDigit(ch) && ch != '.' || !Decimal.TryParse(metroTextBox4.Text + ch, out x))
+            {
+                e.Handled = true;
+            }
+        }
+    }
+};

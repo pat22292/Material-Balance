@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B31B7C9-D5BC-471E-BAA5-B7A231401228}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>productionMonitoringSystem06302016</RootNamespace>
+    <AssemblyName>productionMonitoringSystem06302016</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\New Folder\patrick\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DB44F57B5CAC92460ACBAA04BE315627B3DC531B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>productionMonitoringSystem06302016_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>10_5p3_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>productionMonitoringSystem06302016.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.Charts.Design, Version=12.8.0.6, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Charts.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=12.8.0.6, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.8.0.6, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=12.8.0.6, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design, Version=12.8.0.6, Culture=neutral, PublicKeyToken=76cb4c6eb576bca5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=12.8.0.6, Culture=neutral, PublicKeyToken=26d81176cfa2b486, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=12.8.0.6, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Desktop 06222016\Production Management texicon 1006 Patrick 06152016 3205PM\productionMonitoringForTexicon\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\Desktop 06222016\Production Management texicon 1006 Patrick 06152016 3205PM\productionMonitoringForTexicon\bin\Debug\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\Desktop 06222016\Production Management texicon 1006 Patrick 06152016 3205PM\productionMonitoringForTexicon\bin\Debug\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.5.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Collector, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Utility, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addMat.Designer.cs">
+      <DependentUpon>addMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BackUpandRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUpandRestore.Designer.cs">
+      <DependentUpon>BackUpandRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinishedGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinishedGoods.Designer.cs">
+      <DependentUpon>FinishedGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PdfWriterEvents.cs" />
+    <Compile Include="SoldGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoldGoods.Designer.cs">
+      <DependentUpon>SoldGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sqlCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlCon.Designer.cs">
+      <DependentUpon>sqlCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clientFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clientFrm.Designer.cs">
+      <DependentUpon>clientFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Footer .cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulaFrm.Designer.cs">
+      <DependentUpon>formulaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globalVar.cs" />
+    <Compile Include="lockedUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lockedUser.Designer.cs">
+      <DependentUpon>lockedUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOmessagaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOmessagaForm.Designer.cs">
+      <DependentUpon>LOmessagaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="materialIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="materialIn.Designer.cs">
+      <DependentUpon>materialIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="materialMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="materialMasterList.Designer.cs">
+      <DependentUpon>materialMasterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="materialOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="materialOut.Designer.cs">
+      <DependentUpon>materialOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="matrlStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="matrlStock.Designer.cs">
+      <DependentUpon>matrlStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="msgBoxFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="msgBoxFrm.Designer.cs">
+      <DependentUpon>msgBoxFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportForm.Designer.cs">
+      <DependentUpon>reportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="texiUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="texiUsers.Designer.cs">
+      <DependentUpon>texiUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFrm.Designer.cs">
+      <DependentUpon>UserFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addMat.resx">
+      <DependentUpon>addMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BackUpandRestore.resx">
+      <DependentUpon>BackUpandRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishedGoods.resx">
+      <DependentUpon>FinishedGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoldGoods.resx">
+      <DependentUpon>SoldGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sqlCon.resx">
+      <DependentUpon>sqlCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clientFrm.resx">
+      <DependentUpon>clientFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulaFrm.resx">
+      <DependentUpon>formulaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lockedUser.resx">
+      <DependentUpon>lockedUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOmessagaForm.resx">
+      <DependentUpon>LOmessagaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="materialIn.resx">
+      <DependentUpon>materialIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="materialMasterList.resx">
+      <DependentUpon>materialMasterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="materialOut.resx">
+      <DependentUpon>materialOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="matrlStock.resx">
+      <DependentUpon>matrlStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msgBoxFrm.resx">
+      <DependentUpon>msgBoxFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reportForm.resx">
+      <DependentUpon>reportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="texiUsers.resx">
+      <DependentUpon>texiUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFrm.resx">
+      <DependentUpon>UserFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="productionMonitoringSystem06302016_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13524082_1038845489535365_661089054_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13524082_1038845489535365_661089054_o1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13579838_1038845462868701_1381620423_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RAW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exclamation-Point.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdxsd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peso2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODAL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metrial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\socks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout-129.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout-127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\our-process-icon4 copy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asdasdsfg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13579838_1038845462868701_1381620423_o1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notebook_notepad_journal_book_report_guide_manual_flat_icon_symbol-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODAL1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23246-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SafeWalletLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ntification NEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ntification NEW1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="10_5p3_icon.ico" />
+    <None Include="Resources\hy1.png" />
+    <None Include="Resources\hy.png" />
+    <None Include="Resources\sold goods1.png" />
+    <None Include="Resources\unload1.png" />
+    <None Include="Resources\large.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

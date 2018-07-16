@@ -1,0 +1,3 @@
+﻿1>------ Build started: Project: productionMonitoringSystem06302016, Configuration: Debug Any CPU ------
+1>  productionMonitoringSystem06302016 -> \\Patrick-2016\progress\production monitoring 07262016 1005PM-2\productionMonitoringSystem06302016\bin\Debug\productionMonitoringSystem06302016.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
